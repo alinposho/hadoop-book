@@ -27,8 +27,7 @@ public class FileDecompressor {
             System.exit(1);
         }
 
-        String outputUri =
-                CompressionCodecFactory.removeSuffix(uri, codec.getDefaultExtension());
+        String outputUri = CompressionCodecFactory.removeSuffix(uri, codec.getDefaultExtension());
 
         try (InputStream in = codec.createInputStream(fs.open(inputPath));
              OutputStream out = fs.create(new Path(outputUri))) {
