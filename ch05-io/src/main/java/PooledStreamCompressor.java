@@ -18,7 +18,7 @@ public class PooledStreamCompressor {
         CompressionCodec codec = (CompressionCodec) ReflectionUtils.newInstance(codecClass, conf);
 
         withCompressor(codec, compressor -> {
-            CompressionOutputStream out = codec.createOutputStream(System.out, /*[*/compressor/*]*/);
+            CompressionOutputStream out = codec.createOutputStream(System.out, compressor);
             IOUtils.copyBytes(System.in, out, 4096, false);
             out.finish();
             return true;
