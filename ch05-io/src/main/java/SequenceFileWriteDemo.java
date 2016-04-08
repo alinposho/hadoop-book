@@ -31,8 +31,7 @@ public class SequenceFileWriteDemo {
     Text value = new Text();
     SequenceFile.Writer writer = null;
     try {
-      writer = SequenceFile.createWriter(fs, conf, path,
-          key.getClass(), value.getClass());
+      writer = SequenceFile.createWriter(fs, conf, path,key.getClass(), value.getClass());
       
       for (int i = 0; i < 100; i++) {
         key.set(100 - i);
