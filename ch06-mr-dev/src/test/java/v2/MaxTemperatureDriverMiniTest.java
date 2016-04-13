@@ -48,8 +48,7 @@ public class MaxTemperatureDriverMiniTest extends ClusterMapReduceTestCase {
     MaxTemperatureDriver driver = new MaxTemperatureDriver();
     driver.setConf(conf);
     
-    int exitCode = driver.run(new String[] {
-        input.toString(), output.toString() });
+    int exitCode = driver.run(new String[] {input.toString(), output.toString() });
     assertThat(exitCode, is(0));
     
     // Check the output is as expected
