@@ -8,7 +8,7 @@ object MaxTemperature {
 
     sc.textFile(args(0))
       .map(_.split("\t"))
-      .filter(rec => (rec(1) != "9999" && rec(2).matches("[01459]")))
+      .filter(rec => rec(1) != "9999" && rec(2).matches("[01459]"))
       .map(rec => (rec(0).toInt, rec(1).toInt))
       .reduceByKey((a, b) => Math.max(a, b))
       .saveAsTextFile(args(1))
